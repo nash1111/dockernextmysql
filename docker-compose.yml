@@ -10,3 +10,14 @@ services:
     volumes:
       - ./next:/usr/src/app/next
     command: npm run dev
+  
+  db:
+    image: mysql:8.0
+    container_name: mysql-container
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: next
+      MYSQL_USER: next
+      MYSQL_PASSWORD: next
